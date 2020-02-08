@@ -5,7 +5,7 @@ defmodule SJCCHoops.Player do
   schema "players" do
     field :email, :string
     field :name, :string
-    field :active, :boolean, default: false
+    field :active, :boolean, default: true
 
     timestamps()
 
