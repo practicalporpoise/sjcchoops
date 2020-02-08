@@ -3,5 +3,5 @@
 </div>
 <%= form_tag(Routes.admin_session_path(@conn, :create), method: :post) do %>
   <%= hidden_input(:session, :date, value: @date) %>
-  <%= submit("Add") %>
+  <%= submit("Send") %>
 <% end %>
