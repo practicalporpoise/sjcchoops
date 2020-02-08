@@ -27,7 +27,7 @@ config :sjcchoops, SJCCHoopsWeb.Endpoint,
   http: [:inet6, port: String.to_integer(System.get_env("PORT") || "4000")],
   secret_key_base: secret_key_base
 
-config :sample, SJCCHoops.Mailer,
+config :sjcchoops, SJCCHoops.Mailer,
   adapter: Swoosh.Adapters.Sendgrid,
   api_key: System.get_env("SENDGRID_API_KEY")
 
