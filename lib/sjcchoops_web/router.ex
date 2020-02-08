@@ -26,6 +26,4 @@ defmodule SJCCHoopsWeb.Router do
     get "/:date", PublicController, :index
     get "/:date/:id", PublicController, :update
   end
-
-  match(_, do: send_resp(conn, 404, "Not found"))
 end

@@ -29,8 +29,4 @@ defmodule SJCCHoopsWeb.Admin.SessionController do
     {:ok, right_now} = DateTime.now(@timezone)
     Date.to_iso8601(DateTime.to_date(right_now))
   end
-
-  defp fallback(conn, msg) do
-    @fallback_controller.call(conn, {:error, msg})
-  end
 end

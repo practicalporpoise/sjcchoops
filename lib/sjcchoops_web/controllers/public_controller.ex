@@ -3,13 +3,19 @@ defmodule SJCCHoopsWeb.PublicController do
 
   @timezone "America/Los_Angeles"
 
-  def index(conn, %{"date" => date}) do
-    case SJCCHoops.get_session_by_date(date) do
-      {:ok, session} ->
-        render(conn, "index.html", date: date, session: session)
-
+  def index(conn, %{"date" => date_param}) do
+    with {:ok, date} <- Date.from_iso8601(date_param),
+         {:ok, session} <- SJCCHoops.get_session_by_date(date) do
+      render(conn, "index.html", date: date, session: session)
+    else
       {:error, :not_found} ->
-        render(conn, "index.html", date: date, session: nil)
+        render(conn, "index.html", date: date_param, session: nil)
+
+      _ ->
+        conn
+        |> put_status(:not_found)
+        |> put_view(SJCCHoopsWeb.ErrorView)
+        |> render(:"404")
     end
   end
 
