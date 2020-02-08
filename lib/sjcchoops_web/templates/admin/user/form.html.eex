@@ -1,0 +1,12 @@
+<%= form_for @changeset, @action, fn f -> %>
+  <label>
+    Name: <%= text_input f, :name, required: true %>
+  </label>
+
+  <label>
+    Email: <%= email_input f, :email, required: true %>
+  </label>
+
+  <%= submit(@submit, style: "margin-right: 1rem;") %>
+  <%= link("Cancel", to: Routes.admin_user_path(@conn, :index), class: "button") %>
+<% end %>

@@ -1,0 +1,7 @@
+<div class="manage-header">
+  <h1>Send invites for <%= DateHelpers.long_format(@date) %></h1>
+</div>
+<%= form_tag(Routes.admin_session_path(@conn, :create), method: :post) do %>
+  <%= hidden_input(:session, :date, value: @date) %>
+  <%= submit("Add") %>
+<% end %>

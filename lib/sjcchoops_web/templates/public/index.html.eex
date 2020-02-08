@@ -1,0 +1,10 @@
+<h1><%= DateHelpers.long_format(@date) %></h1>
+<%= if @session do %>
+  <ol>
+    <%= for player <- @session.players do %>
+      <li><%= player.name %></li>
+    <% end %>
+  </ol>
+  <% else %>
+    <h2 style="font-weight:lighter;">No players have signed up for today yet.</h2>
+  <% end %>

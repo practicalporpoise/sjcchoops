@@ -1,0 +1,42 @@
+<div class="manage-header">
+  <h1>Manage Players</h1>
+  <%= link("+", to: Routes.admin_user_path(@conn, :new), type: "button") %>
+</div>
+<table class="manage-users">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= for player <- @players do %>
+      <tr>
+        <td><%= player.name %></td>
+        <td><%= player.email %></td>
+        <td align="center">
+          <%= if player.active do %>
+            <%=
+              link("deactivate",
+                to: Routes.admin_user_path(@conn, :deactivate, player.id),
+                method: :post,
+                data: [confirm: "Are you sure you want to deactivate #{player.name}?"],
+                class: "deactivate"
+              )
+            %>
+          <% else %>
+            <%=
+              link("activate",
+                to: Routes.admin_user_path(@conn, :activate, player.id),
+                method: :post,
+                data: [confirm: "Are you sure you want to activate #{player.name}?"],
+                class: "activate"
+              )
+            %>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
