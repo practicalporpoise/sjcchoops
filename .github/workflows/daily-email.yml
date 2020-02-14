@@ -9,7 +9,7 @@ jobs:
     steps:
       - name: Send Email
         run: |
-          curl -X POST -d '{"session":{"date":"2020-02-14"}}' \
+          curl -X POST \
           -H "Authorization: Bearer $HOOK_ADMIN_TOKEN" \
           -H "Content-Type: application/json" \
           https://sjcchoops.herokuapp.com/hooks/sessions
