@@ -12,6 +12,6 @@ jobs:
           HOOK_ADMIN_TOKEN: ${{ secrets.hookAdminToken }}
         run: |
           curl -X POST -d '{"session":{"date":"2020-02-14"}}' \
-          -H 'Authorization: Bearer $HOOK_ADMIN_TOKEN' \
+          -H 'Authorization: Bearer iQCuteXF97TqXShZcx6QjY0WUxO7PjcY27hJ4HFGFZ/ozLy8KymCVsa7qRJnFZDI' \
           -H 'Content-Type: application/json' \
           https://sjcchoops.herokuapp.com/hooks/sessions
