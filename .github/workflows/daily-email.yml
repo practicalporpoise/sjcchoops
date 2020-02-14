@@ -12,6 +12,8 @@ jobs:
           HOOK_ADMIN_TOKEN: ${{ secrets.hookAdminToken }}
         run: |
           DATE=("date +%Y-%m-%d")
+          echo $DATE
+          echo $HOOK_ADMIN_TOKEN
           curl -X POST -d '{"session":{"date":"$DATE"}}' \
           -H 'Authorization: Bearer $HOOK_ADMIN_TOKEN' \
           -H 'Content-Type: application/json' \
