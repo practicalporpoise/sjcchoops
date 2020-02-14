@@ -1,0 +1,18 @@
+name: Daily Email
+on: push
+  # schedule:
+  #   - cron:  '0 * * * *'
+jobs:
+  daily-email:
+    name: Send Email
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send Email
+        env:
+          HOOK_ADMIN_TOKEN: ${{ secrets.hookAdminToken }}
+        run: |
+          DATE=("date +%Y-%m-%d")
+          curl -X POST -d '{"session":{"date":"$DATE"}}' \
+          -H 'Authorization: Bearer $HOOK_ADMIN_TOKEN' \
+          -H 'Content-Type: application/json' \
+          https://sjcchoops.herokuapp.com/hooks/sessions
