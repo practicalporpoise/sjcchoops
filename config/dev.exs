@@ -77,3 +77,5 @@ config :phoenix, :plug_init_mode, :runtime
 
 config :sjcchoops, SJCCHoops.Mailer, adapter: Swoosh.Adapters.Local
 config :swoosh, serve_mailbox: true, preview_port: 4001
+
+config :sjcchoops, :hook_admin_token, "foobar"

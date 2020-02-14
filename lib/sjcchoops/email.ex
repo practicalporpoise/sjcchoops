@@ -3,16 +3,7 @@ defmodule SJCCHoops.Email do
 
   alias SJCCHoops.DateHelpers
 
-  @from {"SJCC Hoops", "dave@practicalporpoise.com"}
-
-  def welcome(player) do
-    new()
-    |> to({player.name, player.email})
-    |> from(@from)
-    |> subject("Hoops - Tuesday, Feb 2nd")
-    |> html_body("<h1>Hello #{player.name}</h1>")
-    |> text_body("Hello #{player.name}\n")
-  end
+  @from {"SJCC Hoops", "davemcorwin@gmail.com"}
 
   def daily(%{player: player, date: date, url: url}) do
     fmt_date = DateHelpers.long_format(date)

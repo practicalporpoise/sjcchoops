@@ -1,0 +1,4 @@
+<ul>
+  <li><%= link("Manage Sessions", to: Routes.admin_session_path(@conn, :new)) %></li>
+  <li><%= link("Manage Players", to: Routes.admin_user_path(@conn, :index)) %></li>
+</ul>

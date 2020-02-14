@@ -31,6 +31,8 @@ config :sjcchoops, SJCCHoops.Mailer,
   adapter: Swoosh.Adapters.Sendgrid,
   api_key: System.get_env("SENDGRID_API_KEY")
 
+config :sjcchoops, :hook_admin_token, System.get_env("HOOK_ADMIN_TOKEN")
+
 # ## Using releases (Elixir v1.9+)
 #
 # If you are doing OTP releases, you need to instruct Phoenix

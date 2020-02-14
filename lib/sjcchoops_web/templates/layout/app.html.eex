@@ -10,7 +10,12 @@
   </head>
   <body>
     <header>
-      <span class="title"> SJCC Hoops</span>
+      <span class="title">
+        SJCC Hoops
+        <%= if List.first(@conn.path_info) == "admin" do %>
+          <%= link("Admin", to: Routes.admin_admin_path(@conn, :index), class: "thin-nav-link") %>
+        <% end %>
+      </span>
     </header>
     <main role="main" class="container">
       <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>

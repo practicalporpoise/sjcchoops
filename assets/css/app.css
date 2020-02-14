@@ -109,3 +109,14 @@ table {
   color: #234e52;
   font-weight: bold;
 }
+
+.thin-nav-link {
+  font-weight: 300;
+  color: #595959;
+  margin-left: .5rem;
+  opacity: .75;
+}
+
+.thin-nav-link:hover {
+  color: #959595;
+}
