@@ -9,7 +9,7 @@ jobs:
     steps:
       - name: Send Email
         env:
-          HOOK_ADMIN_TOKEN: ${{ secrets.HOOK_ADMIN_TOKEN }}
+          HOOK_ADMIN_TOKEN: iQCuteXF97TqXShZcx6QjY0WUxO7PjcY27hJ4HFGFZ/ozLy8KymCVsa7qRJnFZDI
         run: |
           curl -X POST -d '{"session":{"date":"2020-02-14"}}' \
           -H 'Authorization: Bearer $HOOK_ADMIN_TOKEN' \
