@@ -44,7 +44,8 @@ defmodule SJCCHoops.MixProject do
       {:jason, "~> 1.0"},
       {:plug_cowboy, "~> 2.0"},
       {:tzdata, "~> 1.0.3"},
-      {:swoosh, "~> 0.24"}
+      {:swoosh, "~> 0.24"},
+      {:basic_auth, "~> 2.2.2"}
     ]
   end
 

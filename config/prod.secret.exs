@@ -33,6 +33,13 @@ config :sjcchoops, SJCCHoops.Mailer,
 
 config :sjcchoops, :hook_admin_token, System.get_env("HOOK_ADMIN_TOKEN")
 
+config :sjcchoops,
+  basic_auth: [
+    username: {:system, "BASIC_AUTH_USERNAME"},
+    password: {:system, "BASIC_AUTH_PASSWORD"},
+    realm: "Admin"
+  ]
+
 # ## Using releases (Elixir v1.9+)
 #
 # If you are doing OTP releases, you need to instruct Phoenix

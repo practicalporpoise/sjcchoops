@@ -11,13 +11,17 @@ defmodule SJCCHoopsWeb.Router do
     plug :put_secure_browser_headers
   end
 
+  pipeline :authenticated do
+    plug BasicAuth, use_config: {:sjcchoops, :basic_auth}
+  end
+
   pipeline :hooks do
     plug :accepts, ["json"]
     plug AuthenticateByToken
   end
 
   scope "/admin", SJCCHoopsWeb.Admin, as: :admin do
-    pipe_through :browser
+    pipe_through [:browser, :authenticated]
 
     get "/", AdminController, :index
 

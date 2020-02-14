@@ -79,3 +79,10 @@ config :sjcchoops, SJCCHoops.Mailer, adapter: Swoosh.Adapters.Local
 config :swoosh, serve_mailbox: true, preview_port: 4001
 
 config :sjcchoops, :hook_admin_token, "foobar"
+
+config :sjcchoops,
+  basic_auth: [
+    username: "admin",
+    password: "password",
+    realm: "Admin"
+  ]
