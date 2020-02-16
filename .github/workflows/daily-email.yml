@@ -1,7 +1,7 @@
 name: Daily Email
 on:
   schedule:
-    - cron: '0 16 * * 1-5'
+    - cron: '0 17 * * *'
 jobs:
   daily-email:
     name: Send Email
